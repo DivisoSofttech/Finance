@@ -1,0 +1,19 @@
+entity Transaction (transaction) {
+  transactionDate LocalDate,
+  transactionReference String,
+  description String,
+  imageFile Blob
+}
+
+entity Category (category) {
+  categoryType String,
+  category String
+}
+
+relationship OneToOne {
+  Transaction{transaction} to Category
+}
+
+dto * with mapstruct
+paginate * with pagination
+service * with serviceImpl
